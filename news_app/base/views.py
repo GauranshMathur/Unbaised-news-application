@@ -7,7 +7,13 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
     
 def homepage(request):
-	return render(request=request, template_name='base/home.html')
+    import requests
+    import json
+    
+    news_api_request = requests.get("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=6984912c6cab4f1b8d9b34e0d2fcea2b")
+    api = json.loads(news_api_request.content)
+    
+    return render(request=request, template_name='base/home.html', context={'api':api})
     
 def register_request(request):
 	if request.method == "POST":
