@@ -147,10 +147,17 @@ body {
     width: 100%;
   }
 }
+
+h1 {text-align: center;}
 </style>
 </head>
 <body>
 
+<body style = "background-color: lightblue;">
+
+<div class="container py-5">
+  <h1>Top business headlines in the US right now</h1>
+</div>
 <div class="row">
     {% for x in api.articles %}
     <div class="col-sm">
