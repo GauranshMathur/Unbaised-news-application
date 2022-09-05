@@ -1,7 +1,6 @@
 import tensorflow as tf
 import tensorflow_hub as hub
 import pandas as pd
-import csv
 
 
 
@@ -17,13 +16,10 @@ test = df['title'].values
 
 prediction = model.predict(test)
 
-f = open('final.csv', 'w')
-writer = csv.writer(f)
 
-for i,j in prediction,test:
-    writer.writerow(prediction[i], test[j])
-    
-f.close()
+df['Predict'] = prediction
+
+df.to_csv('final.csv')
 
  
 
