@@ -11,7 +11,8 @@
 
 <!--Login--> 
 <div class="container py-5">
-  <h1>Login</h1>
+  <h1>Unbiased News</h1>
+  <h2>Login</h2>
   <form method="POST">
     {% csrf_token %}
     {{ login_form|crispy }}
@@ -20,4 +21,8 @@
   <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
 </div>
 
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+</style>
 {% endblock %}
